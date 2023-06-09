@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Đăng ký</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets\css\sign up.css">
+    <link rel="stylesheet" href="external\fontawesome-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="'https://fonts.google.com/specimen/Poppins'">
+</head>
+
+<body>
+    <div class="web-wrapper">
+
+        <header class="header">
+            <nav class="header__navBar">
+                <ul class="navBar__list">
+                    <li class="navBar__title">Trung tâm quản lý tuyển sinh</li>
+                    <li class="navBar__list-item">Đăng nhập</li>
+                    <li class="navBar__list-item">Cá nhân</li>
+                    <li class="navBar__list-item">Trang chủ</li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <div class="container">
+            <h2 class="con__title">ĐĂNG KÝ</h2>
+            <div class="con__child">
+                <div class="input__wrapper wrapper--left">
+                    <input class="input" type="text" placeholder="Họ và tên">
+                </div>
+                <div class="input__wrapper wrapper--right">
+                    <input class="input" type="email" placeholder="Địa chỉ Email">
+                </div>
+            </div>
+            <div class="con__child">
+                <div class="input__wrapper wrapper--left">
+                    <input class="input" type="tel" placeholder="Số điện thoại">
+                </div>
+                <div class="input__wrapper wrapper--right">
+                    <input class="input" type="tel" placeholder="Số CMND/CCCD">
+                </div>
+            </div>
+            <div class="con__child">
+                <div class="input__wrapper wrapper--left">
+                    <input class="input" type="password" placeholder="Mật khẩu">
+                </div>
+                <div class="input__wrapper wrapper--right">
+                    <input class="input" type="password" placeholder="Xác nhận lại mật khẩu">
+                </div>
+            </div>
+            <div class="con__help">
+                <input class="help__checkbox" type="checkbox">
+                <p class="help__text"> Hiển thị mật khẩu</p>
+            </div>
+            <div class="con__note">
+                <p class="note__title">
+                    <i class="note__icon fa-solid fa-circle-info"></i>
+                    Chú ý
+                </p>
+                <p class="note__item text">Nhập Họ và tên tiếng Việt có dấu.</p>
+                <p class="note__item text">Mật khẩu có độ dài 8-20 ký tự, bao gồm ký tự hoa, thường và chữ số.</p>
+            </div>
+
+            <div class="con__btn">
+                <div class="btn btn--left js-register">Đăng ký</div>
+                <div class="btn btn--right">Quay lại</div>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="footer__item">
+                <i class="item fa-solid fa-phone"></i>
+                <p class="item">1234567890</p>
+            </div>
+            <div class="footer__item">
+                <a class="footer__item-link" href="https://www.facebook.com/pham.khoa.56884761/">
+                    <i class="item fab fa-facebook"></i>
+                </a>
+                <a class="footer__item-link" href="https://www.facebook.com/pham.khoa.56884761/">
+                    <i class="item fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </footer>
+
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+
+                <div class="modal-succes"></div>
+
+                <div class="modal-checkmark">
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="modal-title">ĐÃ ĐĂNG KÝ THÀNH CÔNG</div>
+
+                <div class="modal-content">VUI LÒNG CHECK MAIL ĐỂ KÍCH HOẠT TÀI KHOẢN</div>
+
+                <div class="turnback-btn js-modal-close">QUAY VỀ</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const RegBtns = document.querySelectorAll('.js-register')
+    const modal = document.querySelector('.js-modal')
+    const modalClose = document.querySelector('.js-modal-close')
+    const modalContainer = document.querySelector('.js-modal-container')
+    function showReg() {
+        modal.classList.add('open')
+    }
+
+    function closeReg() {
+        modal.classList.remove('open')
+    }
+
+    for (const RegBtn of RegBtns) {
+        RegBtn.addEventListener('click', showReg)
+    }
+
+    modalClose.addEventListener('click', closeReg)
+    modal.addEventListener('click', closeReg)
+
+    modalContainer.addEventListener('click', function (event) {
+        event.stopPropagation()
+    })
+
+</script>
+
+
+</html>
